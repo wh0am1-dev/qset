@@ -5,9 +5,7 @@ function scrollHero() {
     $('html').stop();
     $('html').animate({
       scrollTop: 0
-    }, 500, "swing", function() {
-      // callback
-    });
+    }, 500, "swing", function() {});
   }
 }
 
@@ -16,9 +14,7 @@ function scrollContent() {
     $('html').stop();
     $('html').animate({
       scrollTop: $('#content').offset().top
-    }, 500, "swing", function() {
-      // callback
-    });
+    }, 500, "swing", function() {});
   }
 }
 
@@ -51,15 +47,15 @@ function switchQuote() {
   $('#quote').animate({
     opacity: 0
   }, 250, "swing", function() {
-    $('#qtitle').html(idx + '. ' + quotes[idx].author + ', ' + quotes[idx].date);
-    $('#qcontent').html(quotes[idx].quote);
-    
     if ($('#quote').hasClass('dummy')) {
       $('#quote').removeClass('dummy');
       idx = 0;
     } else if (!$('#qcontent').hasClass('tj')) {
-        $('#qcontent').addClass('tj');
+      $('#qcontent').addClass('tj');
     }
+    
+    $('#qtitle').html(idx + '. ' + quotes[idx].author + ', ' + quotes[idx].date);
+    $('#qcontent').html(quotes[idx].quote);
     
     $('#content').animate({
       backgroundColor: bgColors[Math.floor(Math.random() * bgColors.length)]
@@ -103,13 +99,11 @@ $('html').bind(mousewheelEvent, function(e) {
   var delta = evt.detail ? evt.detail * (-40) : evt.wheelDelta;
 
   if (delta > 0) { // scroll up
-    if ($(window).scrollTop() <= $(window).height()) {
+    if ($(window).scrollTop() <= $(window).height())
       scrollHero();
-    }
   } else { // scroll down
-    if ($(window).scrollTop() < $(window).height()) {
+    if ($(window).scrollTop() < $(window).height())
       scrollContent();
-    }
   }
 });
 
@@ -142,29 +136,14 @@ $(window).bind('keyup', function(e) {
     else
       scrollContent();
   } else if (e.key === 'j') { // j: next
-    if ($('#quote').hasClass('dummy')) {
-      $('#quote').removeClass('dummy');
-      idx = 0;
-      switchQuote();
-    } else {
-      nextQuote();
-    }
+    if ($('#quote').hasClass('dummy')) switchQuote();
+    else nextQuote();
   } else if (e.key === 'k') { // k: previous
-    if ($('#quote').hasClass('dummy')) {
-      $('#quote').removeClass('dummy');
-      idx = 0;
-      switchQuote();
-    } else {
-      prevQuote();
-    }
+    if ($('#quote').hasClass('dummy')) switchQuote();
+    else prevQuote();
   } else if (e.key === ' ') { // space: random
-    if ($('#quote').hasClass('dummy')) {
-      $('#quote').removeClass('dummy');
-      idx = 0;
-      switchQuote();
-    } else {
-      rndQuote();
-    }
+    if ($('#quote').hasClass('dummy')) switchQuote();
+    else rndQuote();
   } else {
     var bip = [
       'death', 'life',
@@ -194,17 +173,15 @@ $(window).bind('keydown', function(e) {
     e.preventDefault();
   
   if (e.keyCode == 38) { // up
-    if ($('html').is(':animated')) {
+    if ($('html').is(':animated'))
       e.preventDefault();
-    } else if ($(window).scrollTop() <= $(window).height()) {
+    else if ($(window).scrollTop() <= $(window).height())
       scrollHero();
-    }
   } else if (e.keyCode == 40) { // down
-    if ($('html').is(':animated')) {
+    if ($('html').is(':animated'))
       e.preventDefault();
-    } else if ($(window).scrollTop() < $(window).height()) {
+    else if ($(window).scrollTop() < $(window).height())
       scrollContent();
-    }
   }
 });
 
