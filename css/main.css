@@ -1,0 +1,15 @@
+/* minor tweaks */
+
+::-webkit-scrollbar {
+  display: none;
+  /* width: 0px; */
+}
+
+.qlogo {
+  min-width: 80px;
+  max-width: 20%;
+}
+
+td {
+  text-align: center;
+}
