@@ -20,7 +20,6 @@ function scrollContent() {
 
 // ================================
 
-// var idx = Math.floor(Math.random() * quotes.length);
 var idx = 0;
 
 var bgColors = [
@@ -44,6 +43,13 @@ var fgColors = [
 ];
 
 function switchQuote() {
+  if ($('#quote').is(':animated'))
+    $('#quote').stop();
+  if ($('html').is(':animated'))
+    $('html').stop();
+  if ($('#content').is(':animated'))
+    $('#content').stop();
+
   $('#quote').animate({
     opacity: 0
   }, 250, "swing", function() {
@@ -57,17 +63,17 @@ function switchQuote() {
     $('#qtitle').html(idx + '. ' + quotes[idx].author + ', ' + quotes[idx].date);
     $('#qcontent').html(quotes[idx].quote);
     
-    $('#content').animate({
-      backgroundColor: bgColors[Math.floor(Math.random() * bgColors.length)]
-    }, 500, "swing", function() {});
-    
     $('html').animate({
       scrollTop: $('#content').offset().top
     }, 250, "swing", function() {});
     
     $('#quote').animate({
       opacity: 1
-    }, 250, "swing", function() {});
+    }, 500, "swing", function() {});
+    
+    $('#content').animate({
+      backgroundColor: bgColors[Math.floor(Math.random() * bgColors.length)]
+    }, 500, "swing", function() {});
   });
 }
 
