@@ -7,3 +7,8 @@
 :: coincidence of opposites ::
 
 ### tear down the gate of hallucination
+
+---
+
+- quotes: [the witness](http://the-witness.net/)
+- music: aphex twin - \#3

@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>qset</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>qset</title>
     <link rel="stylesheet" href="css/tachyons.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body class="code">
+
     <article id="hero" class="vh-100 dt w-100 bg-black-90 near-white">
       <div class="dtc v-mid tc ph3 ph4-l">
+
         <header class="tc ph4">
           <img src="img/qset-white.svg" id="logo" class="qlogo grow">
-          <h1 class="f4 f2-m f-subheadline-l fw6 mv0 tc athelas">qset</h1>
+          <h1 class="f2 f1-m f-subheadline-l fw6 mv0 tc athelas">qset</h1>
           <h2 class="f6 f5-m f4-l fw2 lh-copy">
             the witness audiolog library<br>
             made with <i class="fas fa-heart red grow"></i> by <a class="link yellow hover-black-90 hover-bg-yellow" href="https://neko250.github.io" target="_blank">neko250</a>
           </h2>
         </header>
+
         <div class="mw6 center mt5 ph3-ns f7">
           <div class="cf ph2-ns">
-            <div class="fl w-100 w-25-ns pa2">
+            <div class="fl w-50 w-33-ns pa2">
               <kbd>enter: nav</kbd>
             </div>
-            <div class="fl w-100 w-25-ns pa2">
+            <div class="fl w-50 w-33-ns pa2">
               <kbd>j: next</kbd>
             </div>
-            <div class="fl w-100 w-25-ns pa2">
+            <div class="fl w-50 w-33-ns pa2">
               <kbd>k: prev</kbd>
             </div>
-            <div class="fl w-100 w-25-ns pa2">
+            <div class="fl w-50 w-33-ns pa2">
               <kbd>space: rnd</kbd>
+            </div>
+            <div class="fl w-50 w-33-ns pa2">
+              <kbd>mute: m</kbd>
+            </div>
+            <div class="fl w-50 w-33-ns pa2">
+              <kbd>color: h</kbd>
             </div>
           </div>
         </div>
+
       </div>
     </article>
-    
+
     <article id="content" class="vh-100 dt w-100 bg-yellow black-90">
       <div id="quote" class="dtc v-mid tc pa3 pa5-m pa6-l dummy">
-        <header class="tc ph4">
+        <header class="tc ph4 mw8-l center">
           <h1 id="qtitle" class="f4 f3-m f2-l fw6 tc athelas">[ hit space ]</h1>
           <h2 id="qcontent" class="f7 f6-m f5-l fw2 lh-copy">
             tear down the gate of hallucination
@@ -46,7 +57,12 @@
         </header>
       </div>
     </article>
-    
+
+    <audio id="bgm" class="dn" autoplay loop>
+      <source src="bgm/aphex-twin-3.mp3" type="audio/mpeg">
+      <source src="bgm/aphex-twin-3.ogg" type="audio/ogg">
+    </audio>
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.color-2.1.2.min.js"></script>
     <script src="js/fontawesome.js"></script>

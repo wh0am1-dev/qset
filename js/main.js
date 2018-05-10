@@ -42,13 +42,20 @@ var fgColors = [
   'black-90'
 ];
 
+function switchBackground() {
+  if ($('#content').is(':animated'))
+    $('#content').stop();
+
+  $('#content').animate({
+    backgroundColor: bgColors[Math.floor(Math.random() * bgColors.length)]
+  }, 500, "swing", function() {});
+}
+
 function switchQuote() {
   if ($('#quote').is(':animated'))
     $('#quote').stop();
   if ($('html').is(':animated'))
     $('html').stop();
-  if ($('#content').is(':animated'))
-    $('#content').stop();
 
   $('#quote').animate({
     opacity: 0
@@ -59,21 +66,19 @@ function switchQuote() {
     } else if (!$('#qcontent').hasClass('tj')) {
       $('#qcontent').addClass('tj');
     }
-    
+
     $('#qtitle').html(idx + '. ' + quotes[idx].author + ', ' + quotes[idx].date);
     $('#qcontent').html(quotes[idx].quote);
-    
+
     $('html').animate({
       scrollTop: $('#content').offset().top
     }, 250, "swing", function() {});
-    
+
     $('#quote').animate({
       opacity: 1
     }, 500, "swing", function() {});
-    
-    $('#content').animate({
-      backgroundColor: bgColors[Math.floor(Math.random() * bgColors.length)]
-    }, 500, "swing", function() {});
+
+    switchBackground();
   });
 }
 
@@ -94,12 +99,36 @@ function rndQuote() {
 
 // ================================
 
+var amp = { v: 1.0, on: true }
+
+function toggleAudio() {
+  if (amp.v >= 0.5) {
+    $(amp).animate({v:0.0}, {
+      duration: 500,
+      easing: "swing",
+      step: function(val) {
+        $('#bgm').get(0).volume = val;
+      }
+    });
+  } else {
+    $(amp).animate({v:1.0}, {
+      duration: 500,
+      easing: "swing",
+      step: function(val) {
+        $('#bgm').get(0).volume = val;
+      }
+    });
+  }
+}
+
+// ================================
+
 var mousewheelEvent = (/Firefox/i.test(navigator.userAgent)) ? 'DOMMouseScroll' : 'mousewheel';
 
 $('html').bind(mousewheelEvent, function(e) {
   if ($('html').is(':animated'))
     e.preventDefault();
-  
+
   var evt = window.event || e;
   evt = evt.originalEvent ? evt.originalEvent : evt;            
   var delta = evt.detail ? evt.detail * (-40) : evt.wheelDelta;
@@ -150,6 +179,10 @@ $(window).bind('keyup', function(e) {
   } else if (e.key === ' ') { // space: random
     if ($('#quote').hasClass('dummy')) switchQuote();
     else rndQuote();
+  } else if (e.key === 'm') { // m: play/pause music
+    toggleAudio();
+  } else if (e.key === 'h') { // h: background
+    switchBackground();
   } else {
     var bip = [
       'death', 'life',
@@ -169,7 +202,7 @@ $(window).bind('keyup', function(e) {
       'bip', 'bop'
     ];
     var bop = Math.floor(Math.random() * bip.length);
-    
+
     console.log(bip[bop]);
   }
 });
@@ -177,7 +210,7 @@ $(window).bind('keyup', function(e) {
 $(window).bind('keydown', function(e) {
   if (isForbidden(e.keyCode))
     e.preventDefault();
-  
+
   if (e.keyCode == 38) { // up
     if ($('html').is(':animated'))
       e.preventDefault();
