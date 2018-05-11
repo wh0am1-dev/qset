@@ -20,8 +20,7 @@ function scrollContent() {
 
 // ================================
 
-var idx = 0;
-
+var color = 0;
 var bgColors = [
   // '#FFD700', // yellow
   // '#FF4136', // red
@@ -30,26 +29,45 @@ var bgColors = [
   // '#FF80CC', // pink
   // '#5E2CA5', // purple
   // '#F48120', // orange
-  '#FBF1A9', // light-yellow
   '#FF725C', // light-red
-  '#76C4E2', // light-blue
+  '#FAAD3F', // light-orange
+  '#FBF1A9', // light-yellow
   '#9EEBCF', // light-green
-  '#FFA3D7', // light-pink
+  '#76C4E2', // light-blue
   '#A463F2', // light-purple
-  '#FAAD3F'  // light-orange
+  '#FFA3D7'  // light-pink
 ];
 var fgColors = [
   'black-90'
 ];
 
-function switchBackground() {
+function switchColor() {
   if ($('#content').is(':animated'))
     $('#content').stop();
 
   $('#content').animate({
-    backgroundColor: bgColors[Math.floor(Math.random() * bgColors.length)]
+    backgroundColor: bgColors[color]
   }, 500, "swing", function() {});
 }
+
+function nextColor() {
+  if (++color >= bgColors.length) color = 0;
+  switchColor();
+}
+
+function prevColor() {
+  if (--color < 0) color = bgColors.length - 1;
+  switchColor();
+}
+
+function rndColor() {
+  color = Math.floor(Math.random() * bgColors.length);
+  switchColor();
+}
+
+// ================================
+
+var idx = 0;
 
 function switchQuote() {
   if ($('#quote').is(':animated'))
@@ -78,7 +96,7 @@ function switchQuote() {
       opacity: 1
     }, 500, "swing", function() {});
 
-    switchBackground();
+    rndColor();
   });
 }
 
@@ -182,7 +200,7 @@ $(window).bind('keyup', function(e) {
   } else if (e.key === 'm') { // m: play/pause music
     toggleAudio();
   } else if (e.key === 'h') { // h: background
-    switchBackground();
+    nextColor();
   } else {
     var bip = [
       'death', 'life',
