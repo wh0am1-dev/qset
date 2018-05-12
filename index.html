@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>qset</title>
 
-    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="css/fontawesome-5.0.13.css">
-    <link rel="stylesheet" href="css/tachyons.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/vendor/fontawesome-5.0.13.css">
+    <link rel="stylesheet" href="css/vendor/tachyons.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body class="code">
@@ -28,9 +28,6 @@
         <div class="mw6 center mt5 ph3-ns f7">
           <div class="cf ph2-ns">
             <div class="fl w-50 w-33-ns pa2">
-              <kbd>enter: nav</kbd>
-            </div>
-            <div class="fl w-50 w-33-ns pa2">
               <kbd>j: next</kbd>
             </div>
             <div class="fl w-50 w-33-ns pa2">
@@ -40,10 +37,13 @@
               <kbd>space: rnd</kbd>
             </div>
             <div class="fl w-50 w-33-ns pa2">
-              <kbd>mute: m</kbd>
+              <kbd>enter: nav</kbd>
             </div>
             <div class="fl w-50 w-33-ns pa2">
-              <kbd>color: h</kbd>
+              <kbd>h: color</kbd>
+            </div>
+            <div class="fl w-50 w-33-ns pa2">
+              <kbd>m: mute</kbd>
             </div>
           </div>
         </div>
@@ -52,25 +52,31 @@
     </article>
 
     <article id="content" class="vh-100 dt w-100 bg-yellow black-90">
-      <div id="quote" class="dtc v-mid tc pa3 pa5-m pa6-l dummy">
-        <header class="tc ph4 mw8-l center">
-          <h1 id="qtitle" class="f4 f3-m f2-l fw6 tc athelas bg-black-90 near-white">[ hit space ]</h1>
-          <h2 id="qcontent" class="f7 f6-m f5-l fw2 lh-copy">
+      <div id="quote" class="dtc v-mid tc pv3 pv5-m pv6-l ph1 ph3-m ph4-l maya">
+        <header class="tc ph4 mw7-l center">
+          <h1 id="qtitle" class="f5 f3-m f2-l fw6 tc athelas bg-black-90 near-white">[ hit space ]</h1>
+          <div id="qcontent" class="f7 f6-m f5-l lh-copy">
             tear down the gate of hallucination
-          </h2>
+          </div>
         </header>
       </div>
     </article>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery.color-2.1.2.min.js"></script>
-    <script src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/fontawesome-5.0.13.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/vendor/jquery.color-2.1.2.min.js"></script>
+    <script src="js/vendor/fontawesome-5.0.13.min.js"></script>
+
+    <script src="js/bipbop.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/color.js"></script>
+    <script src="js/quote.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/mouse.js"></script>
+    <script src="js/keyboard.js"></script>
 
     <script src="data/audiologs.js"></script>
 
-    <audio id="bgm" class="dn" preload autoplay loop>
+    <audio id="bgm" class="dn" preload loop volume="0.0">
       <source src="bgm/aphex-twin-3.ogg" type="audio/ogg">
       <source src="bgm/aphex-twin-3.mp3" type="audio/mpeg">
     </audio>
