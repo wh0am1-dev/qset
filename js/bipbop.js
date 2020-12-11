@@ -1,5 +1,5 @@
 const bipbop = () => {
-  var bip = [
+  const bip = [
     'death', 'life',
     '0', '1',
     'evil', 'good',
@@ -17,6 +17,6 @@ const bipbop = () => {
     'bip', 'bop'
   ]
 
-  let bop = Math.floor(Math.random() * bip.length)
+  const bop = Math.floor(Math.random() * bip.length)
   console.log(bip[bop])
 }
