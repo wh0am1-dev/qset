@@ -1,4 +1,4 @@
-function bipbop() {
+const bipbop = () => {
   var bip = [
     'death', 'life',
     '0', '1',
@@ -15,9 +15,8 @@ function bipbop() {
     'goodbye', 'hello',
     'stop', 'go',
     'bip', 'bop'
-  ];
+  ]
 
-  var bop = Math.floor(Math.random() * bip.length);
-
-  console.log(bip[bop]);
+  let bop = Math.floor(Math.random() * bip.length)
+  console.log(bip[bop])
 }
