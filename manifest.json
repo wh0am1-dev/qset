@@ -1,0 +1,16 @@
+{
+  "short_name": "qset",
+  "name": "qset",
+  "description": "the witness audiolog library",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#E0E0E0",
+  "background_color": "#101010",
+  "icons": [
+    {
+      "src": "img/qset-layers.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
