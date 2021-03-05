@@ -1,5 +1,13 @@
 $(() => {
   if (isMobile()) $('.desktop, .mobile').toggleClass('dn')
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/qset/sw.js').then(
+      registration =>
+        console.log('service-worker registration successful with scope: ', registration.scope),
+      err => console.log('service-worker registration failed: ', err)
+    )
+  }
 })
 
 const isMobile = () =>
