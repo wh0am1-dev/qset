@@ -3,82 +3,106 @@
   <head>
     <title>qset</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="css/vendor/fontawesome-5.0.13.css">
-    <link rel="stylesheet" href="css/vendor/tachyons.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor/fontawesome-5.0.13.css" />
+    <link rel="stylesheet" href="css/vendor/tachyons.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body class="code">
-
     <article id="hero" class="vh-100 dt w-100 bg-black-90 near-white">
       <div class="dtc v-mid tc ph3 ph4-l">
-
         <header class="tc ph4">
-          <img src="img/qset-white.svg" id="logo" class="qlogo grow">
-          <h1 class="f2 f1-m f-subheadline-l fw6 mv0 tc athelas">qset</h1>
-          <h2 class="f6 f5-m f4-l fw2 lh-copy">
-            <a class="link near-white hover-black-90 hover-bg-yellow" href="http://the-witness.net/" target="_blank">the witness</a> audiolog library<br>
-            music: <a class="link near-white hover-black-90 hover-bg-yellow" href="https://aphextwin.warp.net/" target="_blank">aphex twin</a> - #3<br><br>
-            made with <i class="fas fa-heart red grow"></i> by <a class="link yellow hover-black-90 hover-bg-yellow" href="https://neko250.github.io" target="_blank">neko250</a>
-          </h2>
+          <img src="img/qset-white.svg" id="logo" class="qlogo grow" />
+          <h1 class="f1 f-subheadline-m f-headline-l fw6 mv0 tc athelas">qset</h1>
+          <section class="f5 f4-m f3-l fw2 lh-copy mt4">
+            <div>
+              <a
+                class="link yellow hover-black-90 hover-bg-yellow ph1 br2"
+                href="http://the-witness.net"
+                target="_blank"
+                >the witness</a
+              >
+              audiolog library
+            </div>
+            <div class="mt2">
+              music:
+              <a
+                class="link yellow hover-black-90 hover-bg-yellow ph1 br2"
+                href="https://aphextwin.warp.net"
+                target="_blank"
+                >aphex twin</a
+              >
+              - #3
+            </div>
+            <div class="mt2">
+              made with <i class="fas fa-heart red grow"></i> by
+              <a
+                class="link yellow hover-black-90 hover-bg-yellow ph1 br2"
+                href="https://wh0am1.dev"
+                target="_blank"
+                >wh0am1</a
+              >
+            </div>
+          </section>
         </header>
 
-        <div class="mw6 center mt5 ph3-ns f7">
+        <div class="desktop mw6 center mt5 ph3-ns f6">
           <div class="cf ph2-ns">
-            <div class="fl w-50 w-33-ns pa2">
-              <kbd>j: next</kbd>
-            </div>
-            <div class="fl w-50 w-33-ns pa2">
-              <kbd>k: prev</kbd>
-            </div>
-            <div class="fl w-50 w-33-ns pa2">
-              <kbd>space: rnd</kbd>
-            </div>
-            <div class="fl w-50 w-33-ns pa2">
-              <kbd>enter: nav</kbd>
-            </div>
-            <div class="fl w-50 w-33-ns pa2">
-              <kbd>h: color</kbd>
-            </div>
-            <div class="fl w-50 w-33-ns pa2">
-              <kbd>m: mute</kbd>
-            </div>
+            <div class="fl w-50 w-33-ns pa2"><kbd>j</kbd>: next</div>
+            <div class="fl w-50 w-33-ns pa2"><kbd>k</kbd>: prev</div>
+            <div class="fl w-50 w-33-ns pa2"><kbd>space</kbd>: rnd</div>
+            <div class="fl w-50 w-33-ns pa2"><kbd>enter</kbd>: nav</div>
+            <div class="fl w-50 w-33-ns pa2"><kbd>h</kbd>: color</div>
+            <div class="fl w-50 w-33-ns pa2"><kbd>m</kbd>: mute</div>
           </div>
         </div>
-
       </div>
     </article>
 
     <article id="content" class="vh-100 dt w-100 bg-yellow black-90">
-      <div id="quote" class="dtc v-mid tc pv3 pv5-m pv6-l ph1 ph3-m ph4-l maya">
-        <header class="tc ph4 mw7-l center">
-          <h1 id="qtitle" class="f5 f3-m f2-l fw6 tc athelas bg-black-90 near-white">[ hit space ]</h1>
-          <div id="qcontent" class="f7 f6-m f5-l lh-copy">
+      <section id="quote" class="dtc v-mid tc pv3 pv5-m pv6-l ph1 ph3-m ph4-l maya">
+        <div class="tc ph4 pv4 mw7-l center">
+          <h1
+            id="qtitle"
+            class="desktop ph2 pv1 f4 f3-m f2-l fw6 tc athelas bg-black-90 near-white"
+          >
+            🤜 hit space 🤛
+          </h1>
+          <h1
+            id="qtitlem"
+            class="mobile ph2 pv1 f3 f2-m f1-l fw6 tc athelas bg-black-90 near-white dn"
+          >
+            👉 swipe 👈
+          </h1>
+          <div id="qcontent" class="f5 f4-m f3-l lh-copy athelas">
             tear down the gate of hallucination
           </div>
-        </header>
-      </div>
+        </div>
+      </section>
     </article>
 
     <script src="js/vendor/jquery-3.3.1.min.js"></script>
     <script src="js/vendor/jquery.color-2.1.2.min.js"></script>
+    <script src="js/vendor/jquery.mobile-events.min.js"></script>
     <script src="js/vendor/fontawesome-5.0.13.min.js"></script>
 
+    <script src="js/main.js"></script>
     <script src="js/bipbop.js"></script>
     <script src="js/scroll.js"></script>
     <script src="js/color.js"></script>
     <script src="js/quote.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/mouse.js"></script>
+    <script src="js/touch.js"></script>
     <script src="js/keyboard.js"></script>
 
     <script src="data/audiologs.js"></script>
 
     <audio id="bgm" class="dn" preload loop volume="0.0">
-      <source src="bgm/aphex-twin-3.ogg" type="audio/ogg">
-      <source src="bgm/aphex-twin-3.mp3" type="audio/mpeg">
+      <source src="bgm/aphex-twin-3.ogg" type="audio/ogg" />
+      <source src="bgm/aphex-twin-3.mp3" type="audio/mpeg" />
     </audio>
   </body>
 </html>
