@@ -1,7 +1,9 @@
 $(() => {
-  $.event.special.tap.emitTapOnTaphold = false
-  $('#quote').on('tap', rndQuote)
-  $('#quote').on('taphold', nextColor)
-  $('#quote').on('swipeleft', nextQuote)
-  $('#quote').on('swiperight', prevQuote)
+  if (isMobile()) {
+    $.event.special.tap.emitTapOnTaphold = false
+    // $('#content').on('tap', rndQuote)
+    // $('#content').on('taphold', nextColor)
+    $('#content').on('swipeleft', nextQuote)
+    $('#content').on('swiperight', prevQuote)
+  }
 })

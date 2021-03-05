@@ -22,6 +22,7 @@ const switchQuote = () => {
 
       scrollContent(250)
       $('#qtitle').html(idx + '. ' + quotes[idx].author + ', ' + quotes[idx].date)
+      $('#qtitlem').html(idx + '. ' + quotes[idx].author + ', ' + quotes[idx].date)
       $('#qcontent').html(quotes[idx].quote)
 
       $('#quote').animate(
