@@ -5,9 +5,19 @@
   /* width: 0px; */
 }
 
+::-moz-selection {
+  color: #111;
+  background: #ffd700;
+}
+
+::selection {
+  color: #111;
+  background: #ffd700;
+}
+
 .qlogo {
   min-width: 100px;
-  max-width: 20%;
+  max-width: 25%;
 }
 
 td {
