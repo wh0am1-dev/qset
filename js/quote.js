@@ -49,8 +49,8 @@ const prevQuote = () => {
 }
 
 const rndQuote = () => {
-  var pre = idx
-  while (pre == idx) idx = Math.floor(Math.random() * Math.floor(quotes.length))
+  const pre = idx
+  while (pre === idx) idx = Math.floor(Math.random() * Math.floor(quotes.length))
   switchQuote()
   rndColor()
 }

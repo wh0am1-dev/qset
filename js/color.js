@@ -17,7 +17,7 @@ const bgColors = [
   '#FFA3D7' // light-pink
 ]
 
-const fgColors = ['black-90']
+const fgColors = ['#101010']
 
 const switchColor = () => {
   if ($('#content').is(':animated')) $('#content').clearQueue().stop()

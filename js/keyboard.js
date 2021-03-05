@@ -9,7 +9,7 @@ const forbidden = [
 ]
 
 const isForbidden = keyCode => {
-  for (var i = 0; i < forbidden.length; i++) if (forbidden[i] == keyCode) return true
+  for (let i = 0; i < forbidden.length; i++) if (forbidden[i] == keyCode) return true
   return false
 }
 

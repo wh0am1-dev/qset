@@ -1,4 +1,4 @@
-var quotes = [
+let quotes = [
   {
     title: 'qset',
     author: 'wh0am1',
