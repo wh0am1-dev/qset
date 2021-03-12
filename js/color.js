@@ -1,6 +1,6 @@
 let color = 0
 
-const bgColors = [
+const colors = [
   // '#FFD700', // yellow
   // '#FF4136', // red
   // '#408BC9', // blue
@@ -8,23 +8,23 @@ const bgColors = [
   // '#FF80CC', // pink
   // '#5E2CA5', // purple
   // '#F48120', // orange
-  '#FF725C', // light-red
-  '#FAAD3F', // light-orange
-  '#FBF1A9', // light-yellow
-  '#9EEBCF', // light-green
-  '#76C4E2', // light-blue
-  '#A463F2', // light-purple
-  '#FFA3D7' // light-pink
-]
 
-const fgColors = ['#101010']
+  { bg: '#FF725C', fg: 'rgba(0, 0, 0, .9)' }, // light-red
+  { bg: '#FAAD3F', fg: 'rgba(0, 0, 0, .9)' }, // light-orange
+  { bg: '#FBF1A9', fg: 'rgba(0, 0, 0, .9)' }, // light-yellow
+  { bg: '#9EEBCF', fg: 'rgba(0, 0, 0, .9)' }, // light-green
+  { bg: '#76C4E2', fg: 'rgba(0, 0, 0, .9)' }, // light-blue
+  { bg: '#A463F2', fg: 'rgba(0, 0, 0, .9)' }, // light-purple
+  { bg: '#FFA3D7', fg: 'rgba(0, 0, 0, .9)' } // light-pink
+]
 
 const switchColor = () => {
   if ($('#content').is(':animated')) $('#content').clearQueue().stop()
 
   $('#content').animate(
     {
-      backgroundColor: bgColors[color]
+      color: colors[color].fg,
+      backgroundColor: colors[color].bg
     },
     150,
     'swing',
@@ -33,17 +33,17 @@ const switchColor = () => {
 }
 
 const nextColor = () => {
-  if (++color >= bgColors.length) color = 0
+  if (++color >= colors.length) color = 0
   switchColor()
 }
 
 const prevColor = () => {
-  if (--color < 0) color = bgColors.length - 1
+  if (--color < 0) color = colors.length - 1
   switchColor()
 }
 
 const rndColor = () => {
   let pre = color
-  while (pre == color) color = Math.floor(Math.random() * bgColors.length)
+  while (pre == color) color = Math.floor(Math.random() * colors.length)
   switchColor()
 }
