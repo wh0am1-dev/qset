@@ -1,23 +1,18 @@
 const forbidden = [
   9, // tab
   13, // enter
-  32 // space
-  // 37, // left
+  32, // space
+  37, // left
   // 38, // up
-  // 39, // right
+  39 // right
   // 40  // down
 ]
 
-const isForbidden = keyCode => {
-  for (let i = 0; i < forbidden.length; i++) if (forbidden[i] == keyCode) return true
-  return false
-}
-
 $(() => {
   $(window).on('keyup', e => {
-    if (isForbidden(e.keyCode)) e.preventDefault()
+    if (forbidden.includes(e.keyCode)) e.preventDefault()
 
-    if (e.keyCode == 9 || e.keyCode == 13) {
+    if (e.keyCode === 9 || e.keyCode === 13) {
       // tab/enter: open/close
       if (
         $(window).scrollTop() > $(window).height() / 2 &&
@@ -25,9 +20,9 @@ $(() => {
       )
         scrollHero(250)
       else scrollContent(250)
-    } else if (e.key === 'j') {
+    } else if (e.key === 'j' || e.keyCode === 39) {
       nextQuote() // j: next
-    } else if (e.key === 'k') {
+    } else if (e.key === 'k' || e.keyCode === 37) {
       prevQuote() // k: previous
     } else if (e.key === ' ') {
       rndQuote() // space: random
@@ -41,18 +36,20 @@ $(() => {
   })
 
   $(window).on('keydown', e => {
-    if (isForbidden(e.keyCode)) e.preventDefault()
+    forbidden.includes(e.keyCode) && e.preventDefault()
 
-    if (e.keyCode == 38) {
-      // up
-      if ($('html').is(':animated')) e.preventDefault()
-      else if ($(window).scrollTop() <= $(window).height()) scrollHero(500)
-    } else if (e.keyCode == 40) {
-      // down
-      if ($('html').is(':animated')) e.preventDefault()
-      else if ($(window).scrollTop() < $(window).height()) scrollContent(500)
-    }
+    // if (e.keyCode === 38) {
+    //   // up
+    //   if ($('html').is(':animated')) e.preventDefault()
+    //   else if ($(window).scrollTop() <= $(window).height()) scrollHero(250)
+    // } else if (e.keyCode === 40) {
+    //   // down
+    //   if ($('html').is(':animated')) e.preventDefault()
+    //   else if ($(window).scrollTop() < $(window).height()) scrollContent(250)
+    // }
   })
 
-  $(window).on('keypress', e => isForbidden(e.keyCode) && e.preventDefault())
+  $(window).on('keypress', e => {
+    forbidden.includes(e.keyCode) && e.preventDefault()
+  })
 })
