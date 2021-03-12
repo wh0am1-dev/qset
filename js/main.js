@@ -1,3 +1,7 @@
+Number.prototype.clamp = function (min, max) {
+  return Math.min(Math.max(this, min), max)
+}
+
 const isMobile = () =>
   /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(
     navigator.userAgent
@@ -7,13 +11,20 @@ const isMobile = () =>
   )
 
 $(() => {
-  if (!isMobile()) $('.desktop, .mobile').toggleClass('dn')
+  if (isMobile()) $('.mobile').toggleClass('dn')
+  else $('.desktop').toggleClass('dn')
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/qset/sw.js').then(
-      registration =>
-        console.log('service-worker registration successful with scope: ', registration.scope),
-      err => console.log('service-worker registration failed: ', err)
-    )
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        for (let registration of registrations) registration.unregister()
+      })
+    } else {
+      navigator.serviceWorker.register('/qset/sw.js').then(
+        registration =>
+          console.log('service-worker registration successful with scope: ', registration.scope),
+        err => console.log('service-worker registration failed: ', err)
+      )
+    }
   }
 })

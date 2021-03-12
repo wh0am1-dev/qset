@@ -1,9 +1,10 @@
 $(() => {
   if (isMobile()) {
     $.event.special.tap.emitTapOnTaphold = false
-    // $('#content').on('tap', rndQuote)
-    // $('#content').on('taphold', nextColor)
-    $('#content').on('swipeleft', nextQuote)
-    $('#content').on('swiperight', prevQuote)
+    $('#qtitlem').on('tap', nextColor)
+    $('#qtitlem').on('taphold', nextColor)
+    $('#qtitlem').on('swipeleft', nextQuote)
+    $('#qtitlem').on('swiperight', prevQuote)
+    $('#qtitlem').on('contextmenu', e => e.preventDefault())
   }
 })
