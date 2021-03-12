@@ -23,8 +23,8 @@ $(() => {
         $(window).scrollTop() > $(window).height() / 2 &&
         $(window).scrollTop() <= $(window).height()
       )
-        scrollHero(500)
-      else scrollContent(500)
+        scrollHero(250)
+      else scrollContent(250)
     } else if (e.key === 'j') {
       nextQuote() // j: next
     } else if (e.key === 'k') {

@@ -26,7 +26,7 @@ const switchColor = () => {
     {
       backgroundColor: bgColors[color]
     },
-    500,
+    150,
     'swing',
     () => {}
   )
