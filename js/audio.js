@@ -1,7 +1,7 @@
 const amp = { v: 0.0 }
 
 const toggleAudio = () => {
-  if (amp.v >= 0.5) {
+  if (amp.v >= 0.25) {
     $(amp).clearQueue().stop()
     $(amp).animate(
       { v: 0.0 },
@@ -16,7 +16,7 @@ const toggleAudio = () => {
     $('#bgm').trigger('play')
     $(amp).clearQueue().stop()
     $(amp).animate(
-      { v: 1.0 },
+      { v: 0.5 },
       {
         duration: 500,
         easing: 'swing',
