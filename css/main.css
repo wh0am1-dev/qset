@@ -20,6 +20,10 @@
   max-width: 25%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 td {
   text-align: center;
 }
