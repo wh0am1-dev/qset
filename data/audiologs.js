@@ -81,7 +81,7 @@ const quotes = [
     author: 'William K. Clifford',
     date: '1874',
     quote:
-      '<p>If a man, holding a belief which he was taught in childhood or persuaded of afterwards, keeps down and pushes away any doubts which arise about it in his mind, purposely avoids the reading of books and the company of men that call into question or discuss it, and regards as impious those questions which cannot easily be asked without disturbing it—the life of that man is one long sin against mankind…</p><p>"But," says one, "I am a busy man; I have no time for the long course of study which would be necessary to make me in any degree a competent judge of certain questions, or even able tu understand the nature of the arguments."</p><p>Then he should have no time to believe.</p>'
+      '<p>If a man, holding a belief which he was taught in childhood or persuaded of afterwards, keeps down and pushes away any doubts which arise about it in his mind, purposely avoids the reading of books and the company of men that call into question or discuss it, and regards as impious those questions which cannot easily be asked without disturbing it—the life of that man is one long sin against mankind…</p><p>"But," says one, "I am a busy man; I have no time for the long course of study which would be necessary to make me in any degree a competent judge of certain questions, or even able to understand the nature of the arguments."</p><p>Then he should have no time to believe.</p>'
   },
   {
     title: 'Activation',
