@@ -326,6 +326,6 @@ const quotes = [
     author: 'Jonathan Blow',
     date: '2016',
     quote:
-      '<div class="flex justify-center">A star at dawn,</div><div class="flex justify-center">a bubble in a stream,</div><div class="flex justify-center">a flash of lightning in a summer cloud,</div><div class="flex justify-center">a flickering lamp,</div><div class="flex justify-center">a phantom,</div><div class="flex justify-center">and a dream.</div>'
+      '<div class="flex justify-center">A star at dawn,</div><div class="flex justify-center">A bubble in a stream,</div><div class="flex justify-center">A flash of lightning in a summer cloud,</div><div class="flex justify-center">A flickering lamp,</div><div class="flex justify-center">A phantom,</div><div class="flex justify-center">And a dream.</div>'
   }
 ]
