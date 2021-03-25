@@ -37,6 +37,10 @@ const switchQuote = (dir = DIRECTIONS.RND) => {
         $('#qcontent').html(quotes[idx].quote)
         $('#qtitle, #qtitlem').html(`${idx}. ${quotes[idx].author}<br>${quotes[idx].date}`)
 
+        if (dir === DIRECTIONS.NEXT) nextColor()
+        else if (dir === DIRECTIONS.PREV) prevColor()
+        else rndColor()
+
         $('#quote').animate(
           {
             opacity: 1
@@ -55,24 +59,20 @@ const switchQuote = (dir = DIRECTIONS.RND) => {
 const nextQuote = () => {
   if (++idx >= quotes.length) idx = 0
   switchQuote(DIRECTIONS.NEXT)
-  nextColor()
 }
 
 const prevQuote = () => {
   if (--idx < 0) idx = quotes.length - 1
   switchQuote(DIRECTIONS.PREV)
-  prevColor()
 }
 
 const rndQuote = () => {
   const pre = idx
   while (pre === idx) idx = Math.floor(Math.random() * Math.floor(quotes.length))
   switchQuote()
-  rndColor()
 }
 
 const goto = i => {
   idx = i.clamp(0, quotes.length - 1)
   switchQuote()
-  rndColor()
 }
