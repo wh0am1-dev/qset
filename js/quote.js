@@ -22,6 +22,7 @@ const switchQuote = (dir = DIRECTIONS.RND) => {
   if ($('#quote').is(':animated')) $('#quote').clearQueue().stop()
   if ($('html').is(':animated')) $('html').clearQueue().stop()
 
+  scrollContent()
   $('#quote').animate(
     {
       opacity: 0
@@ -33,7 +34,6 @@ const switchQuote = (dir = DIRECTIONS.RND) => {
       complete: () => {
         if ($('#quote').hasClass('maya')) liftTheVeil()
 
-        scrollContent(250)
         $('#qcontent').html(quotes[idx].quote)
         $('#qtitle, #qtitlem').html(`${idx}. ${quotes[idx].author}<br>${quotes[idx].date}`)
 

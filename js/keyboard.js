@@ -18,8 +18,8 @@ $(() => {
         $(window).scrollTop() > $(window).height() / 2 &&
         $(window).scrollTop() <= $(window).height()
       )
-        scrollHero(250)
-      else scrollContent(250)
+        scrollHero(2)
+      else scrollContent(2)
     } else if (e.key === 'j' || e.keyCode === 39) {
       nextQuote() // j: next
     } else if (e.key === 'k' || e.keyCode === 37) {
@@ -41,11 +41,11 @@ $(() => {
     // if (e.keyCode === 38) {
     //   // up
     //   if ($('html').is(':animated')) e.preventDefault()
-    //   else if ($(window).scrollTop() <= $(window).height()) scrollHero(250)
+    //   else if ($(window).scrollTop() <= $(window).height()) scrollHero(2)
     // } else if (e.keyCode === 40) {
     //   // down
     //   if ($('html').is(':animated')) e.preventDefault()
-    //   else if ($(window).scrollTop() < $(window).height()) scrollContent(250)
+    //   else if ($(window).scrollTop() < $(window).height()) scrollContent(2)
     // }
   })
 

@@ -8,10 +8,10 @@ $(() => {
   //   const delta = evt.detail ? evt.detail * -40 : evt.wheelDelta
   //   if (delta > 0) {
   //     // scroll up
-  //     if ($(window).scrollTop() <= $(window).height()) scrollHero(500)
+  //     if ($(window).scrollTop() <= $(window).height()) scrollHero(2)
   //   } else {
   //     // scroll down
-  //     if ($(window).scrollTop() < $(window).height()) scrollContent(500)
+  //     if ($(window).scrollTop() < $(window).height()) scrollContent(2)
   //   }
   // })
 

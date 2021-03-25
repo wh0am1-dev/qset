@@ -1,25 +1,25 @@
-const scrollHero = ms => {
+const scrollHero = (speed = 1) => {
   if (!$('html').is(':animated')) {
     $('html').clearQueue().stop()
     $('html').animate(
       {
         scrollTop: 0
       },
-      ms,
+      150 / speed,
       'swing',
       () => {}
     )
   }
 }
 
-const scrollContent = ms => {
+const scrollContent = (speed = 1) => {
   if (!$('html').is(':animated')) {
     $('html').clearQueue().stop()
     $('html').animate(
       {
         scrollTop: $('#content').offset().top
       },
-      ms,
+      150 / speed,
       'swing',
       () => {}
     )
