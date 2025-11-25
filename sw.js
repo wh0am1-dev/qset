@@ -1,4 +1,4 @@
-var CACHE_NAME = 'qset-cache-v1'
+var CACHE_NAME = 'qset-cache-v2'
 var urlsToCache = [
   '/qset/index.html',
   '/qset/img/qset-black.svg',
