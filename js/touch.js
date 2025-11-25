@@ -1,10 +1,10 @@
 $(() => {
   if (isMobile()) {
     $.event.special.tap.emitTapOnTaphold = false
-    $('#qtitlem').on('tap', nextColor)
-    $('#qtitlem').on('taphold', rndQuote)
-    $('#qtitlem').on('swipeleft', nextQuote)
-    $('#qtitlem').on('swiperight', prevQuote)
-    $('#qtitlem').on('contextmenu', e => e.preventDefault())
+    $('#quote-title-touch').on('tap', nextColor)
+    $('#quote-title-touch').on('taphold', rndQuote)
+    $('#quote-title-touch').on('swipeleft', nextQuote)
+    $('#quote-title-touch').on('swiperight', prevQuote)
+    $('#quote-title-touch').on('contextmenu', e => e.preventDefault())
   }
 })
