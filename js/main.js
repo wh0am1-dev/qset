@@ -11,8 +11,8 @@ const isMobile = () =>
   )
 
 $(() => {
-  if (isMobile()) $('.mobile').toggleClass('dn')
-  else $('.desktop').toggleClass('dn')
+  if (isMobile()) $('.mobile').toggleClass('flex dn')
+  else $('.desktop').toggleClass('flex dn')
 
   if ('serviceWorker' in navigator) {
     if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {

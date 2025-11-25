@@ -35,7 +35,9 @@ const switchQuote = (dir = DIRECTIONS.RND) => {
         if ($('#quote').hasClass('maya')) liftTheVeil()
 
         $('#qcontent').html(quotes[idx].quote)
-        $('#qtitle, #qtitlem').html(`${idx}. ${quotes[idx].author}<br>${quotes[idx].date}`)
+        $('#qtitle, #qtitlem').html(
+          `${idx}. ${quotes[idx].title}<br><span class="f5 f4-m f3-l">${quotes[idx].author}, ${quotes[idx].date}</span>`
+        )
 
         if (dir === DIRECTIONS.NEXT) nextColor()
         else if (dir === DIRECTIONS.PREV) prevColor()
