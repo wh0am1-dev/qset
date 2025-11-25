@@ -16,10 +16,12 @@ $(() => {
       // tab/enter: open/close
       if (
         $(window).scrollTop() > $(window).height() / 2 &&
-        $(window).scrollTop() <= $(window).height()
-      )
+        $(window).scrollTop() - 1 <= $(window).height()
+      ) {
         scrollHero(0.5)
-      else scrollContent(0.5)
+      } else {
+        scrollContent(0.5)
+      }
     } else if (e.key === 'j' || e.keyCode === 39) {
       nextQuote() // j: next
     } else if (e.key === 'k' || e.keyCode === 37) {
