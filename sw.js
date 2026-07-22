@@ -1,4 +1,4 @@
-var CACHE_NAME = 'qset-cache-v2'
+var CACHE_NAME = 'qset-cache-v3'
 var urlsToCache = [
   '/qset/index.html',
   '/qset/img/qset-black.svg',
@@ -30,6 +30,18 @@ self.addEventListener('install', event =>
       console.log('opened cache')
       return cache.addAll(urlsToCache)
     })
+  )
+)
+
+self.addEventListener('activate', event =>
+  event.waitUntil(
+    caches.keys().then(caches =>
+      Promise.all(
+        caches
+          .filter(cache => cache.startsWith('qset-cache-') && cache !== CACHE_NAME)
+          .map(cache => caches.delete(cache))
+      )
+    )
   )
 )
 

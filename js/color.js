@@ -28,7 +28,10 @@ const switchColor = () => {
     },
     150,
     'swing',
-    () => {}
+    () => {
+      const themeColor = document.querySelector('meta[name="theme-color"]')
+      if (themeColor) themeColor.setAttribute('content', colors[color].bg)
+    }
   )
 }
 
