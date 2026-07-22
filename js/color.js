@@ -21,6 +21,9 @@ const colors = [
 const switchColor = () => {
   if ($('#content').is(':animated')) $('#content').clearQueue().stop()
 
+  const themeColor = document.querySelector('meta[name="theme-color"]')
+  if (themeColor) themeColor.setAttribute('content', colors[color].bg)
+
   $('#content').animate(
     {
       color: colors[color].fg,
@@ -28,10 +31,7 @@ const switchColor = () => {
     },
     150,
     'swing',
-    () => {
-      const themeColor = document.querySelector('meta[name="theme-color"]')
-      if (themeColor) themeColor.setAttribute('content', colors[color].bg)
-    }
+    () => {}
   )
 }
 
