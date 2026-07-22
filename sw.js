@@ -38,7 +38,10 @@ self.addEventListener('activate', event =>
     caches.keys().then(cacheNames =>
       Promise.all(
         cacheNames
-          .filter(cacheName => cacheName !== CACHE_NAME)
+          .filter(
+            cacheName =>
+              cacheName.startsWith('qset-cache-') && cacheName !== CACHE_NAME
+          )
           .map(cacheName => caches.delete(cacheName))
       )
     )
