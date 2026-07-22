@@ -35,14 +35,11 @@ self.addEventListener('install', event =>
 
 self.addEventListener('activate', event =>
   event.waitUntil(
-    caches.keys().then(cacheNames =>
+    caches.keys().then(caches =>
       Promise.all(
-        cacheNames
-          .filter(
-            cacheName =>
-              cacheName.startsWith('qset-cache-') && cacheName !== CACHE_NAME
-          )
-          .map(cacheName => caches.delete(cacheName))
+        caches
+          .filter(cache => cache.startsWith('qset-cache-') && cache !== CACHE_NAME)
+          .map(cache => caches.delete(cache))
       )
     )
   )
